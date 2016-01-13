@@ -25,4 +25,11 @@ class Card
 
     rank
   end
+
+  def to_s
+    suit_hash = {hearts: "♥", spades: "♠", diamonds: "♦", clubs: "♣"}
+    "#{value} #{suit_hash[suit]}"
+  end
+
+
 end
