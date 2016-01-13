@@ -1,6 +1,5 @@
 require 'rspec'
 require 'array_tests'
-require 'towers_of_hanoi.rb'
 
 
 describe "Array#uniq" do
@@ -9,7 +8,6 @@ describe "Array#uniq" do
   it "removes duplicates" do
     expect(array.uniq).to eq([1,2,3])
   end
-
 end
 
 describe "Array#two_sum" do
@@ -28,19 +26,16 @@ describe "Array#my_transpose" do
   ]}
 
   it "it doesn't call the exisiting transpose method" do
-
-
     expect(array).not_to receive(:transpose)
     array.my_transpose
   end
 
   it "switches rows and columns" do
     expect(array.my_transpose).to eq([
-    [0, 3, 6],
-    [1, 4, 7],
-    [2, 5, 8]
-  ])
-
+      [0, 3, 6],
+      [1, 4, 7],
+      [2, 5, 8]
+    ])
   end
 
   it "handles nonsquare arrays" do
@@ -52,9 +47,3 @@ describe "Array#my_transpose" do
       ])
     end
 end
-
-
-#TOWERS OF HANOI TESTS
-
-
-describe
