@@ -1,6 +1,33 @@
 require 'game.rb'
 require 'rspec'
 
+describe Card do
+
+  let(:card) {Card.new(2, :hearts)}
+  let(:card2) {Card.new(3, :spades)}
+
+  it "initializes with value" do
+    expect(card.value).to eq(2)
+  end
+
+  it "initializes with suit" do
+    expect(card.suit).to eq(:hearts)
+  end
+
+  it "returns true when two cards are equal" do
+    expect(card == card).to be_truthy
+  end
+
+  it "returns false when two cards are not equal" do
+    expect(card == card2).to be_falsey
+  end
+
+  it "sorts two cards" do
+    expect(card <=> card2).to eq(-1)
+  end
+end
+
+
 describe Deck do
 
   let(:deck) {Deck.new}
